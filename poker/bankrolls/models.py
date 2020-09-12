@@ -16,3 +16,5 @@ class Transaction(models.Model):
 
     #def __str__(self):
     #    return self.transaction_text
+
+#class Session(models.Model):
