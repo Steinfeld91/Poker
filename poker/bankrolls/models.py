@@ -1,4 +1,3 @@
-#f
 #from django.db import models
 from djongo import models
 from django.contrib.auth.models import User
@@ -29,9 +28,13 @@ class Session(models.Model):
     cash_out = models.DecimalField(default=0, decimal_places=2, max_digits=50)
     notes = models.TextField(max_length=500, blank=True)
     max_table_size = models.IntegerField(default=0)
-    transactions = models.ArrayReferenceField(
-        to=Transaction,
-        on_delete=models.CASCADE,
+    #transactions = models.ArrayReferenceField(
+    #    to=Transaction,
+    #    on_delete=models.CASCADE,
+    #)
+    transactions = models.ArrayField(
+        model_container=Transaction#,
+        #model_form_class=AuthorForm
     )
     session_type = models.CharField(max_length=32)
     
