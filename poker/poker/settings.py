@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -78,10 +79,12 @@ WSGI_APPLICATION = 'poker.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'Poker_DB',
-        'HOST': '127.0.0.1',
-        'PORT': 27017,
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'PokerDB',
+        'USER':'postgres',
+        'PASSWORD':os.environ.get("POKERAPP_DB_PASSWORD", ''),
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 

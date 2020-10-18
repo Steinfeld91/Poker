@@ -1,5 +1,5 @@
-#from django.db import models
-from djongo import models
+from django.db import models
+#from django import models
 from django.contrib.auth.models import User
 
 class Bankroll(models.Model):
@@ -32,9 +32,9 @@ class Session(models.Model):
     #    to=Transaction,
     #    on_delete=models.CASCADE,
     #)
-    transactions = models.ArrayField(
-        model_container=Transaction#,
-        #model_form_class=AuthorForm
-    )
+    #transactions = models.ArrayField(
+    #    model_container=Transaction#,
+    #    #model_form_class=AuthorForm
+    #)
     session_type = models.CharField(max_length=32)
     
